@@ -58,6 +58,7 @@ const ImgContainerRelative = styled(ImgContainer)`
 `
 
 const Card = styled.div`
+  width: 90%;
   max-width: 350px;
   background-color: #15263F;
   padding: 1.5em;
@@ -117,6 +118,9 @@ const Description = styled.p`
 `
 
 const Row = styled.div`
+  @media (max-width: 375px) {
+    font-size: 0.875rem;
+  }
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -143,6 +147,9 @@ const TimeLimit = styled.div`
 `
 
 const Attribution = styled.div`
+  @media (max-width: 375px) {
+    font-size: 0.875rem;
+  }
   display: flex;
   align-items: center;
   letter-spacing: 0.75px;
