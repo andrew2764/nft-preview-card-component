@@ -2,31 +2,37 @@ import imageEquilibrium from "./assets/images/image-equilibrium.jpg";
 import ethereumIcon from "./assets/images/icon-ethereum.svg";
 import imageAvatar from "./assets/images/image-avatar.png";
 import clockIcon from './assets/images/icon-clock.svg'
+import viewIcon from './assets/images/icon-view.svg'
 import styled from "@emotion/styled";
 
 function App() {
   return (
     <Main>
-        <Card>
+      <Card>
+        <ImgContainerRelative>
           <CardImg src={imageEquilibrium} alt="equilibrium" />
-          <Title>Equilibrium #3429</Title>
-          <Description>Our Equilibrium collection promotes balance and calm.</Description>
-          <Row>
-            <Price>
-              <ImgContainer><img src={ethereumIcon} alt="ethereum icon" /></ImgContainer>
-              0.041 ETH
-            </Price>
-            <TimeLimit>
-              <ImgContainer><img src={clockIcon} alt="clock icon"/></ImgContainer>
-              3 days left
-            </TimeLimit>
-          </Row>
-          <hr />
-          <Attribution>
-            <AvatarImg src={imageAvatar} alt="avatar" />
-            <p><a href="">Creation of</a> Jules Wyvern</p>
-          </Attribution>
-        </Card>
+          <Overlay>
+            <ImgContainer><img src={viewIcon} alt="view icon"/></ImgContainer>
+          </Overlay>
+        </ImgContainerRelative>
+        <Title>Equilibrium #3429</Title>
+        <Description>Our Equilibrium collection promotes balance and calm.</Description>
+        <Row>
+          <Price>
+            <ImgContainer><img src={ethereumIcon} alt="ethereum icon" /></ImgContainer>
+            0.041 ETH
+          </Price>
+          <TimeLimit>
+            <ImgContainer><img src={clockIcon} alt="clock icon"/></ImgContainer>
+            3 days left
+          </TimeLimit>
+        </Row>
+        <hr />
+        <Attribution>
+          <AvatarImg src={imageAvatar} alt="avatar" />
+          <p><span>Creation of</span> <a>Jules Wyvern</a></p>
+        </Attribution>
+      </Card>
     </Main>
   );
 }
@@ -47,6 +53,10 @@ const ImgContainer = styled.div`
   justify-content: center;
 `
 
+const ImgContainerRelative = styled(ImgContainer)`
+  position: relative;
+`
+
 const Card = styled.div`
   max-width: 350px;
   background-color: #15263F;
@@ -63,10 +73,38 @@ const CardImg = styled.img`
   max-width: 100%;
 `
 
+const Overlay = styled.div`
+  z-index: 1;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: hsla(178, 100%, 50%, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  opacity: 0;
+
+  img {
+    color: white;
+  }
+
+  transition: all 0.2s ease-in;
+  &:hover {
+    opacity: 1;
+  }
+`
+
 const Title = styled.h3`
   font-size: 1.875rem;
   margin-bottom: 0.5em;
   color: white;
+  cursor: pointer;
+
+  &:hover {
+    color: #00FFF8;
+  }
 `
 
 const Description = styled.p`
@@ -107,15 +145,22 @@ const TimeLimit = styled.div`
 const Attribution = styled.div`
   display: flex;
   align-items: center;
-  color: white;
   letter-spacing: 0.75px;
   font-weight: 300;
   img {
     margin-right: 0.75em;
   }
+  span {
+    color: #8BACD9;
+  }
+
   a {
     text-decoration: none;
-    color: #8BACD9;
+    color: white;
+    cursor: pointer;
+    &:hover {
+      color: #00FFF8;
+    }
   }
 `
 
