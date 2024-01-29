@@ -22,7 +22,7 @@ Users should be able to:
 
 - View the optimal layout depending on their device's screen size
 - See hover states for interactive elements
-- 
+  
 ### Screenshot
 
 ![](./preview.png)
@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: https://www.frontendmentor.io/solutions/nft-preview-card-component-4lDFRU7LAY
+- Live Site URL: https://nft-preview-card-component-kappa-ten.vercel.app/
 
 ## My process
 
